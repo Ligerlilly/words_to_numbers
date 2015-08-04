@@ -31,4 +31,8 @@ describe Fixnum do
     expect(1010.to_words).to eq("one thousand ten")
   end
 
+  it 'translates 12000 to words' do
+    expect(12000.to_words).to eq("twelve thousand")
+  end
+
 end
