@@ -40,7 +40,6 @@ class Fixnum
          elsif count == 3
            fourth_word = ones_hash[num.to_i]
          end
-
        end
        second_word = "hundred"
      else
@@ -51,7 +50,6 @@ class Fixnum
          elsif count == 2
            second_word = ones_hash[num.to_i]
          end
-
        end
      end
     words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}"  + " " + "#{fourth_word}"

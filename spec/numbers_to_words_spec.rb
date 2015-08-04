@@ -11,4 +11,8 @@ describe Fixnum do
     expect(25.to_w).to eq("twenty five")
   end
 
+  it 'translates three digit numbers' do
+    expect(384.to_w).to eq('three hundred eighty four')
+  end
+
 end
