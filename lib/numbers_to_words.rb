@@ -41,6 +41,7 @@ class Fixnum
      fourth_word = ''
      fifth_word = ''
      sixth_word = ''
+     seventh_word = ''
      words = ''
      if numbers_array.length > 4 && numbers_array[0].to_i == 1 && numbers_array[1].to_i != 0
        first_word = teens_hash[numbers_array[1].to_i]
@@ -89,10 +90,18 @@ class Fixnum
          elsif count == 2
            second_word = ones_hash[num.to_i]
            if numbers_array.length == 5
-             second_word = 'thousand'
+             third_word = 'thousand'
            end
+         elsif count == 3
+           fourth_word = ones_hash[num.to_i]
+           if num.to_i != 0
+             fifth_word = 'hundred'
+           end
+         elsif count == 4
+           sixth_word = tens_hash[num.to_i]
+
          elsif count == 5
-            third_word = ones_hash[num.to_i]
+            seventh_word = ones_hash[num.to_i]
 
          end
        end
@@ -115,6 +124,9 @@ class Fixnum
      end
      if sixth_word != ''
        words.concat "#{sixth_word} "
+     end
+     if seventh_word != ''
+       words.concat "#{seventh_word} "
      end
     #words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}" + " " + "#{fourth_word}"  + " " + "#{fifth_word}"  + " " + "#{sixth_word}"
     words.gsub!(/\s+/, ' ').rstrip

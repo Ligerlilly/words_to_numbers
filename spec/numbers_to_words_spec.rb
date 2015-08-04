@@ -47,8 +47,12 @@ describe Fixnum do
     expect(30000.to_words).to eq('thirty thousand')
   end
 
-  it 'translates 30000 to words' do
+  it 'translates 30001 to words' do
     expect(30001.to_words).to eq('thirty thousand one')
+  end
+
+  it 'translates 36345 to words' do
+    expect(36345.to_words).to eq('thirty six thousand three hundred fourty five')
   end
 
 
