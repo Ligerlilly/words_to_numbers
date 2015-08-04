@@ -88,6 +88,12 @@ class Fixnum
            first_word = tens_hash[num.to_i]
          elsif count == 2
            second_word = ones_hash[num.to_i]
+           if numbers_array.length == 5
+             second_word = 'thousand'
+           end
+         elsif count == 5
+            third_word = ones_hash[num.to_i]
+
          end
        end
      end
