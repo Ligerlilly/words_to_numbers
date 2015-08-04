@@ -1,5 +1,5 @@
 class Fixnum
-    define_method(:to_w) do
+    define_method(:to_words) do
     ones_hash = {
       1 => 'one',
       2 => 'two',
@@ -28,6 +28,8 @@ class Fixnum
      second_word = ''
      third_word = ''
      fourth_word = ''
+     fifth_word = ''
+     sixth_word = ''
      if numbers_array.length == 1
        first_word = ones_hash[numbers_array[0].to_i]
      elsif numbers_array.length == 3
@@ -42,6 +44,8 @@ class Fixnum
          end
        end
        second_word = "hundred"
+     elsif numbers_array.length == 4
+
      else
        numbers_array.each do |num|
          count += 1
@@ -55,4 +59,8 @@ class Fixnum
     words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}"  + " " + "#{fourth_word}"
     words.rstrip
     end
+end
+
+def hundreds(numbers_array)
+
 end
