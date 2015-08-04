@@ -45,7 +45,20 @@ class Fixnum
        end
        second_word = "hundred"
      elsif numbers_array.length == 4
-
+       numbers_array.each do |num|
+         count += 1
+         if count == 1
+           first_word = ones_hash[num.to_i]
+           second_word = "thousand"
+         elsif count == 2
+           third_word = ones_hash[num.to_i]
+           fourth_word = "hundred"
+         elsif count == 3
+           fifth_word = tens_hash[num.to_i]
+         elsif count == 4
+           sixth_word = ones_hash[num.to_i]
+         end
+       end
      else
        numbers_array.each do |num|
          count += 1
@@ -56,7 +69,7 @@ class Fixnum
          end
        end
      end
-    words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}"  + " " + "#{fourth_word}"
+    words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}"  + " " + "#{fourth_word}"  + " " + "#{fifth_word}"  + " " + "#{sixth_word}"
     words.rstrip
     end
 end
