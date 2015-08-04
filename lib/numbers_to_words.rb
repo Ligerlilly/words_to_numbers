@@ -22,6 +22,17 @@ class Fixnum
        8 => 'eighty',
        9 => 'ninety'
      }
+     teens_hash = {
+       1 => 'eleven',
+       2 => 'twelve',
+       3 => 'thirteen',
+       4 => 'fourteen',
+       5 => 'fifteen',
+       6 => 'sixteen',
+       7 => 'seventeen',
+       8 => 'eighteen',
+       9 => 'nineteen'
+     }
      numbers_array = self.to_s.split('')
      count = 0
      first_word = ''
@@ -31,7 +42,17 @@ class Fixnum
      fifth_word = ''
      sixth_word = ''
      words = ''
-     if numbers_array.length == 1
+     if numbers_array.length > 4 && numbers_array[0].to_i == 1 && numbers_array[1].to_i != 0
+       first_word = teens_hash[numbers_array[1].to_i]
+       second_word = "thousand"
+       third_word = ones_hash[numbers_array[2].to_i]
+       if numbers_array[2].to_i != 0
+         fourth_word = "hundred"
+       end
+       fifth_word = tens_hash[numbers_array[3].to_i]
+       sixth_word = ones_hash[numbers_array[4].to_i]
+
+     elsif numbers_array.length == 1
        first_word = ones_hash[numbers_array[0].to_i]
      elsif numbers_array.length == 3
        numbers_array.each do |num|
