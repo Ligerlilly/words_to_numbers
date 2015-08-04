@@ -19,12 +19,16 @@ describe Fixnum do
     expect(2384.to_words).to eq('two thousand three hundred eighty four')
   end
 
-  it 'translates four digit number where after first digit is all zeros' do
+  it 'translates 1000 to words' do
     expect(1000.to_words).to eq("one thousand")
   end
 
   it 'translates 1001 to words' do
     expect(1001.to_words).to eq("one thousand one")
+  end
+
+  it 'translates 1010 to words' do
+    expect(1010.to_words).to eq("one thousand ten")
   end
 
 end
