@@ -52,7 +52,7 @@ class Fixnum
            second_word = "thousand"
          elsif count == 2
            third_word = ones_hash[num.to_i]
-           fourth_word = "hundred"
+           fourth_word = "hundred" unless num.to_i == 0
          elsif count == 3
            fifth_word = tens_hash[num.to_i]
          elsif count == 4
