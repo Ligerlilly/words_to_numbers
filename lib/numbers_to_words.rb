@@ -30,6 +30,7 @@ class Fixnum
      fourth_word = ''
      fifth_word = ''
      sixth_word = ''
+     words = ''
      if numbers_array.length == 1
        first_word = ones_hash[numbers_array[0].to_i]
      elsif numbers_array.length == 3
@@ -69,8 +70,27 @@ class Fixnum
          end
        end
      end
-    words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}"  + " " + "#{fourth_word}"  + " " + "#{fifth_word}"  + " " + "#{sixth_word}"
-    words.rstrip
+     #binding.pry
+     if first_word != ''
+       words.concat "#{first_word} "
+     end
+     if second_word != ''
+       words.concat "#{second_word} "
+     end
+     if third_word != ''
+       words.concat "#{third_word} "
+     end
+     if fourth_word != ''
+       words.concat "#{fourth_word} "
+     end
+     if fifth_word != ''
+       words.concat "#{fifth_word} "
+     end
+     if sixth_word != ''
+       words.concat "#{sixth_word} "
+     end
+    #words = "#{first_word}" + " " + "#{second_word}" + " " + "#{third_word}" + " " + "#{fourth_word}"  + " " + "#{fifth_word}"  + " " + "#{sixth_word}"
+    words.gsub!(/\s+/, ' ').rstrip
     end
 end
 
